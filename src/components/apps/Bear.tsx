@@ -127,23 +127,31 @@ const getRepoURL = (url: string) => {
 };
 
 const fixImageURL = (text: string, contentURL: string): string => {
-  text = text.replace(/&nbsp;/g, "");
-  if (contentURL.indexOf("raw.githubusercontent.com") !== -1) {
-    const repoURL = getRepoURL(contentURL);
+  if (!text) return "";
+  try {
+    text = text.replace(/&nbsp;/g, "");
+    if (contentURL && contentURL.indexOf("raw.githubusercontent.com") !== -1) {
+      const repoURL = getRepoURL(contentURL);
 
-    const imgReg = /!\[(.*?)\]\((.*?)\)/;
-    const imgRegGlobal = /!\[(.*?)\]\((.*?)\)/g;
+      const imgReg = /!\[(.*?)\]\((.*?)\)/;
+      const imgRegGlobal = /!\[(.*?)\]\((.*?)\)/g;
 
-    const imgList = text.match(imgRegGlobal);
+      const imgList = text.match(imgRegGlobal);
 
-    if (imgList) {
-      for (const img of imgList) {
-        const imgURL = (img.match(imgReg) as Array<string>)[2];
-        if (imgURL.indexOf("http") !== -1) continue;
-        const newImgURL = repoURL + imgURL;
-        text = text.replace(imgURL, newImgURL);
+      if (imgList) {
+        for (const img of imgList) {
+          const match = img.match(imgReg);
+          if (match && match[2]) {
+            const imgURL = match[2];
+            if (imgURL.indexOf("http") !== -1) continue;
+            const newImgURL = repoURL + imgURL;
+            text = text.replace(imgURL, newImgURL);
+          }
+        }
       }
     }
+  } catch (err) {
+    console.error("fixImageURL error:", err);
   }
   return text;
 };
@@ -181,7 +189,7 @@ const Content = ({ contentID, contentURL }: ContentProps) => {
         ]}
         components={Highlighter(dark as boolean)}
       >
-        {storeMd[contentID]}
+        {storeMd[contentID] || ""}
       </ReactMarkdown>
     </div>
   );

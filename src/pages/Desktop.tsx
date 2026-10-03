@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState, useEffect, useMemo } from "react";
+import { useStore } from "~/stores";
+import { useWindowSize } from "~/hooks";
 import { apps, wallpapers } from "~/configs";
 import { minMarginY } from "~/utils";
+import TopBar from "~/components/menus/TopBar";
+import Dock from "~/components/dock/Dock";
+import Spotlight from "~/components/Spotlight";
+import Launchpad from "~/components/Launchpad";
+import AppWindow from "~/components/AppWindow";
+import DesktopWidgets from "~/components/widgets/DesktopWidgets";
+import IOSHomeScreen from "~/components/mobile/IOSHomeScreen";
 import type { MacActions } from "~/types";
 
 interface DesktopState {
@@ -235,53 +244,95 @@ export default function Desktop(props: MacActions) {
     });
   };
 
+  const { winWidth } = useWindowSize();
+  const isMobile = (winWidth || (typeof window !== "undefined" ? window.innerWidth : 1024)) < 768;
+
+  // Active app for mobile full-screen sheet
+  const activeAppId = useMemo(() => {
+    let topId: string | null = null;
+    let maxZ = -1;
+    if (state.showApps && state.appsZ) {
+      for (const [id, isShown] of Object.entries(state.showApps)) {
+        if (isShown && !state.minApps?.[id]) {
+          const z = state.appsZ[id] || 0;
+          if (z > maxZ) {
+            maxZ = z;
+            topId = id;
+          }
+        }
+      }
+    }
+    return topId;
+  }, [state.showApps, state.appsZ, state.minApps]);
+
   return (
     <div
-      className="size-full overflow-hidden bg-center bg-cover"
+      className="size-full overflow-hidden bg-center bg-cover relative"
       style={{
         backgroundImage: `url(${dark ? wallpapers.night : wallpapers.day})`,
         filter: `brightness( ${(brightness as number) * 0.7 + 50}% )`
       }}
     >
-      {/* Top Menu Bar */}
-      <TopBar
-        title={state.currentTitle}
-        setLogin={props.setLogin}
-        shutMac={props.shutMac}
-        sleepMac={props.sleepMac}
-        restartMac={props.restartMac}
-        toggleSpotlight={toggleSpotlight}
-        hide={state.hideDockAndTopbar}
-        setSpotlightBtnRef={setSpotlightBtnRef}
-        openApp={openApp}
-      />
-
-      {/* Desktop Apps */}
-      <div className="window-bound z-10 absolute" style={{ top: minMarginY }}>
-        {renderAppWindows()}
-      </div>
-
-      {/* Spotlight */}
-      {state.spotlight && (
-        <Spotlight
+      {/* Mobile iOS Home Screen Mode */}
+      {isMobile ? (
+        <IOSHomeScreen
+          apps={apps}
           openApp={openApp}
+          activeAppId={activeAppId}
+          closeActiveApp={() => activeAppId && closeApp(activeAppId)}
+          activeAppContent={
+            activeAppId
+              ? apps.find((a) => a.id === activeAppId)?.content || null
+              : null
+          }
           toggleLaunchpad={toggleLaunchpad}
-          toggleSpotlight={toggleSpotlight}
-          btnRef={spotlightBtnRef as React.RefObject<HTMLDivElement>}
         />
+      ) : (
+        <>
+          {/* Top Menu Bar */}
+          <TopBar
+            title={state.currentTitle}
+            setLogin={props.setLogin}
+            shutMac={props.shutMac}
+            sleepMac={props.sleepMac}
+            restartMac={props.restartMac}
+            toggleSpotlight={toggleSpotlight}
+            hide={state.hideDockAndTopbar}
+            setSpotlightBtnRef={setSpotlightBtnRef}
+            openApp={openApp}
+          />
+
+          {/* Desktop Widgets (macOS Sonoma Pinned Widgets) */}
+          <DesktopWidgets openApp={openApp} />
+
+          {/* Desktop Apps */}
+          <div className="window-bound z-10 absolute" style={{ top: minMarginY }}>
+            {renderAppWindows()}
+          </div>
+
+          {/* Spotlight */}
+          {state.spotlight && (
+            <Spotlight
+              openApp={openApp}
+              toggleLaunchpad={toggleLaunchpad}
+              toggleSpotlight={toggleSpotlight}
+              btnRef={spotlightBtnRef as React.RefObject<HTMLDivElement>}
+            />
+          )}
+
+          {/* Dock */}
+          <Dock
+            open={openApp}
+            showApps={state.showApps}
+            showLaunchpad={state.showLaunchpad}
+            toggleLaunchpad={toggleLaunchpad}
+            hide={state.hideDockAndTopbar}
+          />
+        </>
       )}
 
-      {/* Launchpad */}
+      {/* Launchpad (Available for both mobile & desktop) */}
       <Launchpad show={state.showLaunchpad} toggleLaunchpad={toggleLaunchpad} />
-
-      {/* Dock */}
-      <Dock
-        open={openApp}
-        showApps={state.showApps}
-        showLaunchpad={state.showLaunchpad}
-        toggleLaunchpad={toggleLaunchpad}
-        hide={state.hideDockAndTopbar}
-      />
     </div>
   );
 }

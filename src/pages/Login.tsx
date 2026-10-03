@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useStore } from "~/stores";
 import { wallpapers, user } from "~/configs";
 import type { MacActions } from "~/types";
 

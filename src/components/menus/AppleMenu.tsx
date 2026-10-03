@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useClickOutside } from "~/hooks";
+import { MenuItem, MenuItemGroup } from "./base";
 
 interface AppleMenuProps {
   logout: () => void;

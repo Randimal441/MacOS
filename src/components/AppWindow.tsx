@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Rnd } from "react-rnd";
+import { useStore } from "~/stores";
+import { useWindowSize } from "~/hooks";
 import { minMarginX, minMarginY, appBarHeight } from "~/utils";
 
 const FullIcon = ({ size }: { size: number }) => (
