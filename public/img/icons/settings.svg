@@ -1,0 +1,95 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="256" y1="0" x2="256" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7A7A80"/>
+      <stop offset="25%" stop-color="#55555A"/>
+      <stop offset="75%" stop-color="#3A3A3E"/>
+      <stop offset="100%" stop-color="#28282B"/>
+    </linearGradient>
+
+    <!-- Outer Bevel / Border Gradient -->
+    <linearGradient id="borderGrad" x1="256" y1="0" x2="256" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <!-- Gear Body Gradient -->
+    <radialGradient id="gearRadial" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#ECECF0"/>
+      <stop offset="60%" stop-color="#C5C5CE"/>
+      <stop offset="85%" stop-color="#9C9CA6"/>
+      <stop offset="100%" stop-color="#73737C"/>
+    </radialGradient>
+
+    <!-- Gear Shadow -->
+    <filter id="gearShadow" x="-10%" y="-10%" width="125%" height="125%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+
+    <!-- Inner Groove Shadow -->
+    <filter id="innerHoleShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Base Squircle -->
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#bgGrad)"/>
+  <rect x="16.5" y="16.5" width="479" height="479" rx="107.5" stroke="url(#borderGrad)" stroke-width="3"/>
+
+  <!-- Subtle Brushed Texture Concentric Rings on Background -->
+  <circle cx="256" cy="256" r="210" stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1.5" fill="none"/>
+  <circle cx="256" cy="256" r="170" stroke="#000000" stroke-opacity="0.15" stroke-width="2" fill="none"/>
+  <circle cx="256" cy="256" r="130" stroke="#FFFFFF" stroke-opacity="0.05" stroke-width="1.5" fill="none"/>
+
+  <!-- Master Cogwheel with Filter -->
+  <g filter="url(#gearShadow)">
+    <!-- 8 Cog Teeth formed as rotated rectangles -->
+    <g fill="url(#gearRadial)">
+      <!-- 0 deg -->
+      <rect x="230" y="86" width="52" height="64" rx="8"/>
+      <!-- 45 deg -->
+      <rect x="230" y="86" width="52" height="64" rx="8" transform="rotate(45 256 256)"/>
+      <!-- 90 deg -->
+      <rect x="230" y="86" width="52" height="64" rx="8" transform="rotate(90 256 256)"/>
+      <!-- 135 deg -->
+      <rect x="230" y="86" width="52" height="64" rx="8" transform="rotate(135 256 256)"/>
+      <!-- 180 deg -->
+      <rect x="230" y="86" width="52" height="64" rx="8" transform="rotate(180 256 256)"/>
+      <!-- 225 deg -->
+      <rect x="230" y="86" width="52" height="64" rx="8" transform="rotate(225 256 256)"/>
+      <!-- 270 deg -->
+      <rect x="230" y="86" width="52" height="64" rx="8" transform="rotate(270 256 256)"/>
+      <!-- 315 deg -->
+      <rect x="230" y="86" width="52" height="64" rx="8" transform="rotate(315 256 256)"/>
+      <!-- Main Outer Circle -->
+      <circle cx="256" cy="256" r="142"/>
+    </g>
+
+    <!-- Outer Gear Chamfer / Rim Highlight -->
+    <circle cx="256" cy="256" r="141" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="2" fill="none"/>
+    <circle cx="256" cy="256" r="122" stroke="#48484E" stroke-opacity="0.45" stroke-width="3" fill="none"/>
+
+    <!-- Inner Recessed Groove -->
+    <circle cx="256" cy="256" r="102" fill="#585860" stroke="#3A3A40" stroke-width="3"/>
+    
+    <!-- Secondary Gear Core Hub -->
+    <circle cx="256" cy="256" r="82" fill="url(#gearRadial)" stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="2"/>
+    
+    <!-- 6 Small Hub Indent Holes for mechanical realism -->
+    <circle cx="256" cy="196" r="10" fill="#3D3D42"/>
+    <circle cx="256" cy="196" r="10" fill="#3D3D42" transform="rotate(60 256 256)"/>
+    <circle cx="256" cy="196" r="10" fill="#3D3D42" transform="rotate(120 256 256)"/>
+    <circle cx="256" cy="196" r="10" fill="#3D3D42" transform="rotate(180 256 256)"/>
+    <circle cx="256" cy="196" r="10" fill="#3D3D42" transform="rotate(240 256 256)"/>
+    <circle cx="256" cy="196" r="10" fill="#3D3D42" transform="rotate(300 256 256)"/>
+
+    <!-- Central Axle Hole -->
+    <g filter="url(#innerHoleShadow)">
+      <circle cx="256" cy="256" r="36" fill="#242428" stroke="#1A1A1D" stroke-width="3"/>
+      <!-- Inner Deep Rim -->
+      <circle cx="256" cy="256" r="26" fill="#18181A"/>
+      <circle cx="256" cy="256" r="25" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="1.5" fill="none"/>
+    </g>
+  </g>
+</svg>

@@ -1,5 +1,6 @@
 import { appBarHeight } from "~/utils";
 import type { AppsData } from "~/types";
+import Settings from "~/components/apps/Settings";
 
 const apps: AppsData[] = [
   {
@@ -71,6 +72,19 @@ const apps: AppsData[] = [
     desktop: true,
     img: "img/icons/terminal.png",
     content: <Terminal />
+  },
+  {
+    id: "settings",
+    title: "Settings",
+    desktop: true,
+    width: 800,
+    height: 540,
+    minWidth: 620,
+    minHeight: 420,
+    x: 40,
+    y: -10,
+    img: "img/icons/settings.svg",
+    content: <Settings />
   },
   {
     id: "github",
