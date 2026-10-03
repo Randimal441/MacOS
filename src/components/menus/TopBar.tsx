@@ -1,8 +1,12 @@
-import React from "react";
+import React, { forwardRef, useRef, useState } from "react";
 import { format } from "date-fns";
 import { isFullScreen } from "~/utils";
 import { music } from "~/configs";
 import type { MacActions } from "~/types";
+import AppleMenu from "./AppleMenu";
+import Battery from "./Battery";
+import WifiMenu from "./WifiMenu";
+import ControlCenterMenu from "./ControlCenterMenu";
 
 interface TopBarItemProps {
   hideOnMobile?: boolean;

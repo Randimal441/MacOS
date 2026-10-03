@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+import { useStore } from "~/stores";
 import { wallpapers, launchpadApps } from "~/configs";
 
 interface LaunchpadProps {

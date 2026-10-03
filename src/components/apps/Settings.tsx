@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { user, wallpapers } from "~/configs";
+import user from "~/configs/user";
+import wallpapers from "~/configs/wallpapers";
+import { useStore } from "~/stores";
+
+// Safe fallbacks to prevent runtime undefined crashes
+const userName = user?.name || "Randimal Lamahewa";
+const userAvatar = user?.avatar || "img/ui/avatar.jpg";
+const wallpaperDay = wallpapers?.day || "img/ui/wallpaper-day.jpg";
+const wallpaperNight = wallpapers?.night || "img/ui/wallpaper-night.jpg";
 
 // iOS Toggle Switch Component
 interface ToggleProps {
@@ -246,12 +254,12 @@ export default function Settings() {
             }`}
           >
             <img
-              src={user.avatar}
-              alt={user.name}
+              src={userAvatar}
+              alt={userName}
               className="w-12 h-12 rounded-full object-cover shadow-sm border border-white/20"
             />
             <div className="flex-1 text-left min-w-0">
-              <div className="font-semibold text-sm truncate">{user.name}</div>
+              <div className="font-semibold text-sm truncate">{userName}</div>
               <div
                 className={`text-[11px] truncate ${
                   activeTab === "about-user"
@@ -375,7 +383,7 @@ export default function Settings() {
                   <div>
                     <h2 className="font-bold text-sm">MacBook Pro (16-inch, M3)</h2>
                     <p className="text-xs text-gray-500 dark:text-gray-400">
-                      Owner: {user.name}
+                      Owner: {userName}
                     </p>
                   </div>
                 </div>
@@ -675,7 +683,7 @@ export default function Settings() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex flex-col items-center">
                     <img
-                      src={wallpapers.day}
+                      src={wallpaperDay}
                       alt="macOS Day Wallpaper"
                       className="w-full h-28 object-cover rounded-xl shadow-md border border-gray-200 dark:border-gray-700"
                     />
@@ -683,7 +691,7 @@ export default function Settings() {
                   </div>
                   <div className="flex flex-col items-center">
                     <img
-                      src={wallpapers.night}
+                      src={wallpaperNight}
                       alt="macOS Night Wallpaper"
                       className="w-full h-28 object-cover rounded-xl shadow-md border border-gray-200 dark:border-gray-700"
                     />
@@ -842,11 +850,11 @@ export default function Settings() {
             <div className="space-y-4">
               <div className="bg-white dark:bg-[#1c1c1e] rounded-xl p-5 shadow-xs text-center flex flex-col items-center">
                 <img
-                  src={user.avatar}
-                  alt={user.name}
+                  src={userAvatar}
+                  alt={userName}
                   className="w-20 h-20 rounded-full object-cover shadow-md border-2 border-blue-500 mb-3"
                 />
-                <h2 className="font-bold text-lg">{user.name}</h2>
+                <h2 className="font-bold text-lg">{userName}</h2>
                 <p className="text-xs text-blue-500 font-medium">
                   randimalchamika@gmail.com
                 </p>
