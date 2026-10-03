@@ -13,8 +13,8 @@ const terminal: TerminalData[] = [
         content: (
           <div className="py-1">
             <div>
-              Hi, this is Xiaohan Zou. I am a PhD student at the Computer Science and
-              Engineering department of Pennsylvania State University.
+              Hi, this is Randimal Lamahewa. Dedicated Quality Assurance Engineer and
+              BSc (Hons) Information Technology undergraduate at SLIIT.
             </div>
           </div>
         )
@@ -23,14 +23,15 @@ const terminal: TerminalData[] = [
         id: "about-interests",
         title: "interests.txt",
         type: "file",
-        content: "Machine Learning / Computer Vision / Multimodal Learning"
+        content:
+          "QA & Automated Testing (Selenium, Playwright, TestNG) / IoT & Machine Learning / Cricket Biomechanical Analysis"
       },
       {
         id: "about-who-cares",
         title: "who-cares.txt",
         type: "file",
         content:
-          "I'm looking for a research internship for Summer 2024. I'm open to collaboration on research projects."
+          "I am a competitive athlete bringing discipline, analytical precision, and a problem-solving mindset to software reliability."
       },
       {
         id: "about-contact",
@@ -42,65 +43,33 @@ const terminal: TerminalData[] = [
               Email:{" "}
               <a
                 className="text-blue-300"
-                href="mailto:renovamenzxh@gmail.com"
+                href="mailto:randimalchamika@gmail.com"
                 target="_blank"
                 rel="noreferrer"
               >
-                renovamenzxh@gmail.com
+                randimalchamika@gmail.com
               </a>
             </li>
             <li>
               Github:{" "}
               <a
                 className="text-blue-300"
-                href="https://github.com/Renovamen"
+                href="https://github.com/Randimal441"
                 target="_blank"
                 rel="noreferrer"
               >
-                @Renovamen
-              </a>
-            </li>
-            <li>
-              <a
-                className="text-blue-300"
-                href="https://scholar.google.com/citations?user=RuW6xgMAAAAJ"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Google Scholar
+                @Randimal441
               </a>
             </li>
             <li>
               Linkedin:{" "}
               <a
                 className="text-blue-300"
-                href="https://www.linkedin.com/in/xiaohan-zou"
+                href="https://www.linkedin.com/in/randimal-lamahewa-153483271/"
                 target="_blank"
                 rel="noreferrer"
               >
-                xiaohan-zou
-              </a>
-            </li>
-            <li>
-              Personal Website:{" "}
-              <a
-                className="text-blue-300"
-                href="https://zxh.me"
-                target="_blank"
-                rel="noreferrer"
-              >
-                https://zxh.me
-              </a>
-            </li>
-            <li>
-              知乎:{" "}
-              <a
-                className="text-blue-300"
-                href="https://www.zhihu.com/people/chao-neng-gui-su"
-                target="_blank"
-                rel="noreferrer"
-              >
-                @西伯利亚大恶龙
+                randimal-lamahewa
               </a>
             </li>
           </ul>
@@ -116,10 +85,14 @@ const terminal: TerminalData[] = [
       <div className="py-1">
         <div>
           <span className="text-yellow-400">while</span>(
-          <span className="text-blue-400">sleeping</span>) <span>{"{"}</span>
+          <span className="text-blue-400">testing</span>) <span>{"{"}</span>
         </div>
         <div>
-          <span className="text-blue-400 ml-9">money</span>
+          <span className="text-blue-400 ml-9">bugs</span>
+          <span className="text-yellow-400">--</span>;
+        </div>
+        <div>
+          <span className="text-blue-400 ml-9">quality</span>
           <span className="text-yellow-400">++</span>;
         </div>
         <div>

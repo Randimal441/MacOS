@@ -4,28 +4,28 @@ const bear: BearData[] = [
   {
     id: "profile",
     title: "Profile",
-    icon: "i-fa-solid:paw",
+    icon: "i-fa-solid:user",
     md: [
       {
         id: "about-me",
         title: "About Me",
         file: "markdown/about-me.md",
-        icon: "i-la:dragon",
-        excerpt: "Hey there! I'm a dragon lost in human world..."
+        icon: "i-ri:user-smile-line",
+        excerpt: "QA Engineer & IT Undergraduate at SLIIT, specializing in test automation..."
       },
       {
         id: "github-stats",
         title: "Github Stats",
         file: "markdown/github-stats.md",
         icon: "i-icon-park-outline:github",
-        excerpt: "Here are some status about my github account..."
+        excerpt: "Here are some live stats about my GitHub account (@Randimal441)..."
       },
       {
         id: "about-site",
         title: "About This Site",
         file: "markdown/about-site.md",
         icon: "i-octicon:browser",
-        excerpt: "Something about this personal portfolio site..."
+        excerpt: "Something about this personal macOS-style portfolio site..."
       }
     ]
   },
@@ -35,124 +35,60 @@ const bear: BearData[] = [
     icon: "i-octicon:repo",
     md: [
       {
-        id: "flint",
-        title: "Flint",
-        file: "https://raw.githubusercontent.com/Renovamen/flint/main/README.md",
-        icon: "i-heroicons-solid:fire",
-        excerpt: "A deep learning framework implemented in Numpy...",
-        link: "https://github.com/Renovamen/flint"
+        id: "ai-web-testing",
+        title: "AutoQA AI Testing",
+        file: "markdown/ai-web-testing.md",
+        icon: "i-ant-design:robot-filled",
+        excerpt: "AI-driven web testing platform powered by Playwright and React...",
+        link: "https://github.com/Randimal441/AI-Web_testing_Project"
       },
       {
-        id: "portfolio-macos",
-        title: "Portfolio macOS",
-        file: "https://raw.githubusercontent.com/Renovamen/playground-macos/main/README.md",
-        icon: "i-ri:gamepad-line",
-        excerpt: "My portfolio website simulating macOS's GUI...",
-        link: "https://github.com/Renovamen/playground-macos"
+        id: "campus-connect",
+        title: "Campus Connect",
+        file: "https://raw.githubusercontent.com/Randimal441/Campus_connect/main/campus-connect-system/README.md",
+        icon: "i-fluent:people-community-24-filled",
+        excerpt: "MERN stack portal for campus communities, clubs, events, and resources...",
+        link: "https://github.com/Randimal441/Campus_connect"
       },
       {
-        id: "oh-my-cv",
-        title: "Oh, My CV!",
-        file: "https://raw.githubusercontent.com/Renovamen/oh-my-cv/main/README.md",
-        icon: "i-ri:newspaper-fill",
-        excerpt: "Write your curriculum vitae / resume in Markdown online...",
-        link: "https://ohmycv.app"
+        id: "pet-care-system",
+        title: "Pet Care & Treatment",
+        file: "https://raw.githubusercontent.com/AseshNemal/Online-system-for-pet-care-and-treatment-services/main/README.md",
+        icon: "i-fa-solid:paw",
+        excerpt: "IoT smart collar tracking, Gemini AI trainer, and clinic management system...",
+        link: "https://github.com/AseshNemal/Online-system-for-pet-care-and-treatment-services"
       },
       {
-        id: "oh-vue-icons",
-        title: "Oh, Vue Icons!",
-        file: "https://raw.githubusercontent.com/Renovamen/oh-vue-icons/master/README.md",
-        icon: "i-fa-brands:vuejs",
-        excerpt: "Importing icons from different icon packs in Vue easily...",
-        link: "https://oh-vue-icons.js.org"
+        id: "daily-routine-automation",
+        title: "Daily Routine QA",
+        file: "markdown/daily-routine-automation.md",
+        icon: "i-tabler:calendar-time",
+        excerpt: "Automated regression testing framework in Java with Selenium & TestNG...",
+        link: "https://github.com/Randimal441/Daily_Routine_Automation"
       },
       {
-        id: "gungnir",
-        title: "Gungnir",
-        file: "https://raw.githubusercontent.com/Renovamen/vuepress-theme-gungnir/main/README.md",
-        icon: "i-akar-icons:sword",
-        excerpt: "A simple and beautiful blog theme for VuePress...",
-        link: "https://vuepress-theme-gungnir.vercel.app"
+        id: "parking-reservation-test",
+        title: "Parking Reservation QA",
+        file: "https://raw.githubusercontent.com/Randimal441/Parking_Reservation_automation_test/main/README.md",
+        icon: "i-fluent:shield-task-28-filled",
+        excerpt: "Selenium WebDriver test suite utilizing Page Object Model (POM)...",
+        link: "https://github.com/Randimal441/Parking_Reservation_automation_test"
       },
       {
-        id: "metallic",
-        title: "Metallic",
-        file: "https://raw.githubusercontent.com/Renovamen/metallic/master/README.md",
-        icon: "i-icon-park-outline:heavy-metal",
-        excerpt: "A meta-learning library base on PyTorch...",
-        link: "https://github.com/Renovamen/metallic"
+        id: "parking-management-system",
+        title: "Smart Parking System",
+        file: "https://raw.githubusercontent.com/Randimal441/Parking-reservation-management-system/main/README.md",
+        icon: "i-mdi:car-parking-lot",
+        excerpt: "MERN stack parking system featuring real-time slot tracking and analytics...",
+        link: "https://github.com/Randimal441/Parking-reservation-management-system"
       },
       {
-        id: "text-classification",
-        title: "Text Classification",
-        file: "https://raw.githubusercontent.com/Renovamen/Text-Classification/master/README.md",
-        icon: "i-gg:format-text",
-        excerpt: "PyTorch implementation of text classificaiton models...",
-        link: "https://github.com/Renovamen/Text-Classification"
-      },
-      {
-        id: "speech-emotion-recognition",
-        title: "Speech Emotion",
-        file: "https://raw.githubusercontent.com/Renovamen/Speech-Emotion-Recognition/master/README.md",
-        icon: "i-ant-design:audio-filled",
-        excerpt: "Speech emotion recognition using Keras and sklearn...",
-        link: "https://github.com/Renovamen/Speech-Emotion-Recognition"
-      },
-      {
-        id: "pcalg-py",
-        title: "PC Algorithm",
-        file: "https://raw.githubusercontent.com/Renovamen/pcalg-py/master/README.md",
-        icon: "i-tabler:atom-2",
-        excerpt: "Implement PC algorithm in Python...",
-        link: "https://github.com/Renovamen/pcalg-py"
-      },
-      {
-        id: "midgard",
-        title: "Midgard",
-        file: "https://raw.githubusercontent.com/Renovamen/midgard/master/README.md",
-        icon: "i-bx:game",
-        excerpt: "An interactive version of my resume, powered by Vue...",
-        link: "https://resume.zxh.io/"
-      },
-      {
-        id: "image-captioning",
-        title: "Image Captioning",
-        file: "https://raw.githubusercontent.com/Renovamen/Image-Captioning/master/README.md",
-        icon: "i-bi:image-fill",
-        excerpt: "PyTorch implementation of image captioning models...",
-        link: "https://github.com/Renovamen/Image-Captioning"
-      },
-      {
-        id: "wordle-helper",
-        title: "Wordle Helper",
-        file: "https://raw.githubusercontent.com/Renovamen/wordle-helper/main/README.md",
-        icon: "i-bi:grid-1x2",
-        excerpt: "Help you solve Wordle puzzles...",
-        link: "https://wordle.zxh.io"
-      },
-      {
-        id: "cube-solver",
-        title: "Cube Solver",
-        file: "https://raw.githubusercontent.com/Renovamen/Just-a-Cube/master/README.md",
-        icon: "i-bx:cube",
-        excerpt: "A rubik's cube solver (layer-by-layer & two-phase)...",
-        link: "https://cube.zxh.io"
-      },
-      {
-        id: "alkaid",
-        title: "Alkaid",
-        file: "https://raw.githubusercontent.com/Renovamen/alkaid/main/README.md",
-        icon: "i-simple-icons:stellar",
-        excerpt: "Minimal reinforcement-learning toolbox for PyTorch...",
-        link: "https://github.com/Renovamen/alkaid"
-      },
-      {
-        id: "fishmail",
-        title: "Fishmail",
-        file: "https://raw.githubusercontent.com/Renovamen/Fishmail/master/README.md",
-        icon: "i-game-icons:fish-escape",
-        excerpt: "上班的时候装作在 Gmail 上查邮件的样子看知乎摸鱼...",
-        link: "https://fishmail.vercel.app"
+        id: "spendysense",
+        title: "SpendySense",
+        file: "https://raw.githubusercontent.com/Randimal441/SpendySense/main/README.md",
+        icon: "i-solar:wallet-money-bold",
+        excerpt: "Android personal finance tracker in Kotlin with budget alerts and analysis...",
+        link: "https://github.com/Randimal441/SpendySense"
       }
     ]
   }

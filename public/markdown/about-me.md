@@ -2,31 +2,24 @@
 
 ## Biography
 
-Hey there! I am a PhD student at the [Computer Science and Engineering](https://www.eecs.psu.edu/) department of [Pennsylvania State University](https://www.psu.edu/). Previously, I received my master's degree in [Computer Science](https://www.bu.edu/cs/) from [Boston University](https://www.bu.edu/) and my bachelor’s degree in [Software Engineering](http://sse.tongji.edu.cn/) from [Tongji University](https://www.tongji.edu.cn/).
+Hey there! I am **Randimal Lamahewa**, a dedicated **Quality Assurance Engineer** and **BSc (Hons) Information Technology** undergraduate at [SLIIT](https://www.sliit.lk/).
 
-I'm trying to find a balance between research and engineering.
+I specialize in test automation and execution, utilizing tools like **Selenium WebDriver** and **TestNG** to ensure the reliability and performance of complex web applications.
 
-My current research interests primarily focus on understanding and enhancing the continuity, generalizability, efficiency, and other key properties of machine learning. I am also interested in large multimodal models.
+Alongside my technical career, I am a competitive athlete—a dual passion that heavily influences my work, including my recent research integrating **IoT and machine learning** for AI-based biomechanical analysis in cricket.
 
-I'm also learning web development and building machine learning software and systems.
+Whether I am architecting test strategies, debugging full-stack systems, or competing on the field, I bring discipline, analytical precision, and a problem-solving mindset to every challenge.
 
+## Core Competencies & Interests
+
+- **QA & Test Automation:** Selenium WebDriver, TestNG, Playwright, Page Object Model (POM), Test Strategy & Planning, Automated Regression Testing
+- **Development & Stacks:** Full-stack development (MERN Stack: React, Node.js, Express, MongoDB), Java, Kotlin (Android), TypeScript, Python
+- **Specialized Research:** IoT device integration, Machine Learning models for biomechanical sports analysis, motion sensors
 
 ## Contact
 
 Contact me by:
 
-- Email: [renovamenzxh@gmail.com](mailto:renovamenzxh@gmail.com)
-- Github: [@Renovamen](https://github.com/Renovamen)
-- [Google Scholar](https://scholar.google.com/citations?user=RuW6xgMAAAAJ)
-- Linkedin: [xiaohan-zou](https://www.linkedin.com/in/xiaohan-zou)
-- 知乎: [@西伯利亚大恶龙](https://www.zhihu.com/people/chao-neng-gui-su)
-- Personal Website: [zxh.me](https://zxh.me)
-
-
-## Résumé
-
-- Normal version: [English](https://zxh.me/files/cv/en.pdf) / [中文](https://zxh.me/files/cv/cn.pdf)
-
-  中文版的更新很可能不及时
-
-- Interesting version: [portfolio.zxh.me](https://portfolio.zxh.me) / [resume.zxh.io](https://resume.zxh.io)
+- Email: [randimalchamika@gmail.com](mailto:randimalchamika@gmail.com)
+- LinkedIn: [randimal-lamahewa-153483271](https://www.linkedin.com/in/randimal-lamahewa-153483271/)
+- GitHub: [@Randimal441](https://github.com/Randimal441)
