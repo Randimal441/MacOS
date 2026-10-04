@@ -89,7 +89,7 @@ const apps: AppsData[] = [
     minHeight: 420,
     x: 40,
     y: -10,
-    img: "img/icons/settings.svg",
+    img: "img/icons/settings.png",
     content: <Settings />
   },
   {
